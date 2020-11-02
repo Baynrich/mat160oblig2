@@ -1,8 +1,10 @@
 
+
 def solve(U, b):
+    """ 1a) Takes matrix, solution vector. returns weights vector """
     assert len(U) == len(U[0]), "U must be NxN matrix"
     assert len(U) == len(b), "Matrix and solution vector do not match"
-    """ Takes matrix, solution vector. returns weights vector. """
+
     x = []
     for i in range(len(U)):
         offset = 0

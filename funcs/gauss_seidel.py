@@ -2,6 +2,11 @@ import numpy as np
 
 
 def solve(A, x, b, max_iters):
+    """
+    2b)
+    Takes matrix, starting x vector, solution vector and a maximum number of iterations.
+    Returns iteratively calculated weights vector and array of each iteration's error.
+    """
     assert len(A) == len(A[0]), "A must be N x N"
     for i in range(len(A)):
         pos_row = [abs(ele) for ele in A[i]]
