@@ -39,6 +39,7 @@ def generate_matrix(alpha, N=1000):
 print("2c) Funksjonene vil konvergere for alpha != [-4, 0], fordi begge metodene krever at input-matrisen er strictly diagonally dominant")
 
 # 2d)
+
 plt.subplot(211)
 for alpha in alphas:
     A, x_0, b = generate_matrix(alpha)

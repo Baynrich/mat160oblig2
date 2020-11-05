@@ -13,18 +13,9 @@ def solve(A, x, b, max_iters):
         assert pos_row[i] > sum(pos_row)-pos_row[i], "Input matrix is not strictly diagonally dominant"
 
     # Split matrix into upper and lower
-    L, H = [], []
-    for i in range(len(A)):
-        l_row, h_row = [], []
-        for j in range(len(A[0])):
-            if(j <= i):
-                l_row.append(A[i][j])
-                h_row.append(0)
-            else:
-                l_row.append(0)
-                h_row.append(A[i][j])
-        L.append(l_row)
-        H.append(h_row)
+    L = np.tril(A)
+    H = np.triu(A, k=1)
+
     # Iterate towards true value
     L_inv = np.linalg.inv(L)
     errs = []
